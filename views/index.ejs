@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="../public/styles/styles.css">
+  <link rel="icon" href="../public/img/logo.png" type="fox">
+  <title>Inicio / Twitter</title>
+</head>
+
+<body class="container-fluid bg-black font-custom text-color row m-0">
+  <div class="col-lg-1"></div>
+  <nav class="col-lg-3">
+    <section class="container navbar-section">
+      <div class="container navbar-container logo-twitter-container">
+        <a class="navbar-a first-child" href="#">
+          <img src="../public/img/navbar/twitter.png" alt="" width="40" height="40">
+        </a>
+      </div>
+      <div class="container navbar-container">
+        <a class="navbar-a bold-text" href="#">
+          <img src="../public/img/navbar/inicio.png" alt="" width="30" height="30">
+          Inicio
+        </a>
+      </div>
+      <div class="container navbar-container">
+        <a class="navbar-a" href="#">
+          <img src="../public/img/navbar/buscar.png" alt="" width="30" height="30">
+          Explorar
+        </a>
+      </div>
+      <div class="container navbar-container">
+        <a class="navbar-a" href="#">
+          <img src="../public/img/navbar/notificaciones.png" alt="" width="30" height="30"
+          >
+          Notificaciones
+        </a>
+      </div>
+      <div class="container navbar-container">
+        <a class="navbar-a" href="#">
+          <img src="../public/img/navbar/mensajes.png" alt="" width="30" height="30">
+          Mensajes
+        </a>
+      </div>
+      <div class="container navbar-container">
+        <a class="navbar-a" href="#">
+          <img src="../public/img/navbar/listas.png" alt="" width="30" height="30">
+          Listas
+        </a>
+      </div>
+      <div class="container navbar-container">
+        <a class="navbar-a" href="#">
+          <img src="../public/img/navbar/guardados.png" alt="" width="30" height="30">
+          Guardados
+        </a>
+      </div>
+      <div class="container navbar-container">
+        <a class="navbar-a" href="#">
+          <img src="../public/img/navbar/verificado.png" alt="" width="30" height="30">
+          Verificado
+        </a>
+      </div>
+      <div class="container navbar-container">
+        <a class="navbar-a" href="#">
+          <img src="../public/img/navbar/perfil.png" alt="" width="30" height="30">
+          Perfil
+        </a>
+      </div>
+      <div class="container navbar-container">
+        <a class="navbar-a" href="#">
+          <img src="../public/img/navbar/mas.png" alt="" width="30" height="30">
+          Más opciones
+        </a>
+      </div>
+      <div class="container navbar-btn">
+        <a class="btn rounded-pill bold-text" href="#" role="button">Twittear</a>
+      </div>
+    </section>
+  
+    <section class="container navbar-user">
+        <div class="col-md-3">
+          <img src="../public/img/fotos de perfil/miguel.png" class="rounded-circle" alt="Imagen Circular" width="60"
+            height="60">
+        </div>
+        <div class="col-md-8 profile-user">
+          <p class="bold-text">Migue Granados <img src="../public/img/twitt/verificado.png" alt="" width="20" height="15"></p>
+          <span>@miguegranados</span>
+        </div>
+        <div class="col-md-1 puntitos">
+          <p>..</p>
+        </div>
+    </section>
+  </nav>
+
+  <main class="col-lg-5">
+    <section class="container menu-fixed fixed-top">
+        <div class="inicio">
+          <p class="bold-text">Inicio</p>
+        </div>
+        <div class="container menu-options">
+          <span class="bold-text">Para ti</span>
+          <span>Siguiendo</span>
+        </div>
+    </section>
+
+    <section class="container twittear-container">
+        <div class="col-md-2">
+          <img src="../public/img/fotos de perfil/miguel.png" class="rounded-circle" alt="Imagen Circular" width="60"
+            height="60">
+        </div>
+        <div class="col-md-8">
+          <div class="texto">
+            <p data-bs-toggle="modal" data-bs-target="#exampleModal">¡¿Qué está pasando?!</p>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo Twitt</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="/" method="POST">
+                      <div class="mb-3">
+                        <label for="title" class="form-label">Título</label>
+                        <input type="text" class="form-control" id="title" name="title" value="<%= posts.title %>">
+                    </div>
+                
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Descripción</label>
+                        <textarea type="text" class="form-control" id="description" name="description"><%= posts.description %></textarea>
+                    </div>
+                
+                    <div class="mb-3">
+                        <label for="markdown" class="form-label">Resumen</label>
+                        <textarea type="text" class="form-control" id="markdown" name="markdown">
+                          <%= posts.markdown %>
+                        </textarea>
+
+                    <button type="submit" class="btn rounded-pill twittear-button">Twittear</button>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="action-icons">
+            <img src="../public/img/twittear/imagenes.png" alt="imagen" width="25" height="25">
+            <img src="../public/img/twittear/gif.png" alt="gif" width="25" height="25">
+            <img src="../public/img/twittear/lista.png" alt="lista" width="25" height="25">
+            <img src="../public/img/twittear/emoji.png" alt="emoji" width="25" height="25">
+            <img src="../public/img/twittear/reciente.png" alt="hora" width="25" height="25">
+            <img src="../public/img/twittear/ubicacion.png" alt="ubicacion" width="25" height="25">
+          </div>
+        </div>
+    </section>
+      <% posts.forEach((post) => { %>
+        <div class="container tweet-container">
+          <div class="col-md-2">
+            <img src="../public/img/fotos de perfil/1.png" class="rounded-circle fotoDePerfil" alt="Imagen Circular" width="50" height="50">
+          </div>
+          <div class="col-md-9 tweet-body">
+            <div class="name-tweet">
+              <span class="bold-text nameApi">Miguel Angel Durán</span>
+              <img src="../public/img/twitt/verificado.png" alt="verificado" width="20" height="15">
+              <span class="emailApi">@midudev</span>
+              <span class="bold-text">·</span>
+              <span>1h</span>
+            </div>
+            <div class="respuesta-container">
+              <span>En respuesta a</span>
+              <span>@midudev</span>
+            </div>
+            <p class="titleApi">
+              <%= post.title %>
+            </p>
+            <p class="bodyApi">
+              <%= post.description %>
+            </p>
+            <p>
+              <%= post.markdown %>
+            </p>
+            <div class="reactions-container">
+              <div class="comentarios-container">
+                <img src="../public/img/twitt/comentarios.png" id="comentarios" alt="comentarios" width="20" height="20">
+                <span>5</span>
+              </div>
+              <div>
+                <img src="../public/img/twitt/retwitts.png" alt="retwitts" width="20" height="20">
+                <span>1</span>
+              </div>
+              <div>
+                <img src="../public/img/twitt/favorito.png" alt="favorito" width="20" height="20">
+                <span>7</span>
+              </div>
+              <div>
+                <img src="../public/img/twitt/estadisticas.png" alt="estadisticas" width="20" height="20">
+                <span>1.794</span>
+              </div>
+              <div>
+                <img src="../public/img/twitt/descargar.png" alt="descargar" width="20" height="20">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1">
+            <div class="bold-text tres-puntitos">    
+              <div class="dropdown">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots dropdown-toggle" viewBox="0 0 16 16" data-bs-toggle="dropdown">
+                  <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                </svg>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal2">Editar</a></li>
+                  <li><a class="dropdown-item" href="#">Borrar</a></li>
+                </ul>
+
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel2">Editar Twitt</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="mb-3">
+                            <label for="title" class="form-label">Título</label>
+                            <input type="text" class="form-control" id="title" name="title">
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Descripción</label>
+                            <textarea type="text" class="form-control" id="description" name="description"></textarea>
+                        </div>
+                    
+                        <div class="mb-3">
+                            <label for="markdown" class="form-label">Resumen</label>
+                            <textarea type="text" class="form-control" id="markdown" name="markdown"></textarea>
+                        </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="submit" class="btn rounded-pill twittear-button">Editar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }) %>  
+  </main>
+
+  <aside class="col-lg-3">
+    <div class="bg-dark-twitter rounded-pill search-container">
+      <div>
+        <img src="../public/img/buscar.png" alt="lupa" width="30" height="30" class="col">
+      </div>
+      <div>
+        <input type="search" placeholder="Buscar en Twitter" aria-label="Search" class="col">
+      </div>
+    </div>
+
+    <div class="row bg-dark-twitter verificacion-container">
+      <h5 class="bold-text">Obtener verificación</h5>
+      <p class="bold-text">Suscribete para desbloquear nuevas <br>funciones</p>
+      <div>
+        <button class="btn rounded-pill bold-text verificacion-btn">Obtener verificación</button>
+      </div>
+
+    </div>
+
+    <div class="bg-dark-twitter col tendencias-container">
+      <div>
+        <h5 class="bold-text">Qué está pasando</h5>
+      </div>
+
+      <div class="tendencias">
+        <div class="info-tendecias">
+          <div>
+            <span>Tendencia en Argentina</span>
+            <p class="bold-text">Esteban Laureno Maradona</p>
+          </div>
+          <span class="bold-text">···</span>
+        </div>
+        <div class="info-tendecias">
+          <div>
+            <span>Tendencia en Argentina</span>
+            <p class="bold-text">Lolla</p>
+            <span>3.653 Tweets</span>
+          </div>
+          <span class="bold-text">···</span>
+        </div>     
+        <div class="info-tendecias">
+          <div>
+            <span>Tendencia en Argentina</span>
+            <p class="bold-text">23 de la Liga Profesional</p>
+          </div>
+          <span class="bold-text">···</span>
+        </div>  
+        <div class="info-tendecias">
+          <div>
+            <span>Tendencia en Argentina</span>
+            <p class="bold-text">Ladaga</p>
+            <span>1.872 Tweets</span>
+          </div>
+          <span class="bold-text">···</span>
+        </div>    
+      </div>
+
+      <div class="mostrar-mas">
+        <span>Mostar más</span>
+      </div>
+    </div>
+
+    <div class="bg-dark-twitter sugerencias-container">
+      <div class="seguir">
+        <h5 class="bold-text">A quién seguir</h5>
+      </div>
+      <div class="container sugerencias-perfil">
+        <div>
+          <img src="../public/img/fotos de perfil/lateral1.png" class="rounded-circle" alt="Imagen Circular" width="50" height="50">
+        </div>
+        <div class="profile-user">
+          <p class="bold-text">Mauro Albornoz <img src="./img/twitt/verificado.png" alt="" width="20" height="15"></p>
+          <span>@Mau_Albornoz</span>
+        </div>
+        <div>
+          <button class="btn seguir-btn rounded-pill bold-text">Seguir</button>
+        </div>
+      </div>
+      <div class="container sugerencias-perfil">
+        <div>
+          <img src="../public/img/fotos de perfil/lateral2.png" class="rounded-circle" alt="Imagen Circular" width="50" height="50">
+        </div>
+        <div class="profile-user">
+          <p class="bold-text">valen</p>
+          <span>@prottovalen <img src="../public/img/te-sigue.png" alt="" width="50" height="20"></span>
+        </div>
+        <div>
+          <button class="btn seguir-btn rounded-pill bold-text">Seguir</button>
+        </div>
+      </div>
+      <div class="container sugerencias-perfil">
+        <div>
+          <img src="../public/img/fotos de perfil/lateral3.png" class="rounded-circle" alt="Imagen Circular" width="50" height="50">
+        </div>
+        <div class="profile-user">
+          <p class="bold-text">CONMEBOL Sud... <img src="../public/img/twitt/verificado.png" alt="" width="20" height="15"></p>
+          <span>@Sudamericana</span>
+        </div>
+        <div>
+          <button class="btn seguir-btn rounded-pill bold-text">Seguir</button>
+        </div>
+      </div>
+      <div class="mostrar-mas">
+        <span>Mostar más</span>
+      </div>
+    </div>
+  </aside>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
