@@ -186,7 +186,7 @@ main {
     color: var(--white);
     font-weight: bold;
     padding: 5px 15px 5px 15px;
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 .twittear-button:hover {
@@ -436,4 +436,11 @@ svg:hover {
     color: var(--white);
 }
 
+.modal-content {
+    color: var(--background-dark);
+}
 
+.twittear-modal-container {
+    display: flex;
+    justify-content: end;
+}

@@ -140,12 +140,11 @@
                         <textarea type="text" class="form-control" id="markdown" name="markdown">
                           <%= posts.markdown %>
                         </textarea>
-
-                    <button type="submit" class="btn rounded-pill twittear-button">Twittear</button>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
+                        <div class="twittear-modal-container">
+                          <button type="submit" class="btn rounded-pill twittear-button">Twittear</button>
+                        </div>
                     
+                    </form>
                   </div>
                 </div>
               </div>
@@ -164,13 +163,13 @@
       <% posts.forEach((post) => { %>
         <div class="container tweet-container">
           <div class="col-md-2">
-            <img src="../public/img/fotos de perfil/1.png" class="rounded-circle fotoDePerfil" alt="Imagen Circular" width="50" height="50">
+            <img src="../public/img/fotos de perfil/miguel.png" class="rounded-circle fotoDePerfil" alt="Imagen Circular" width="50" height="50">
           </div>
           <div class="col-md-9 tweet-body">
             <div class="name-tweet">
-              <span class="bold-text nameApi">Miguel Angel Durán</span>
+              <span class="bold-text nameApi">Migue Granados</span>
               <img src="../public/img/twitt/verificado.png" alt="verificado" width="20" height="15">
-              <span class="emailApi">@midudev</span>
+              <span class="emailApi">@miguegranados</span>
               <span class="bold-text">·</span>
               <span>1h</span>
             </div>
@@ -216,8 +215,14 @@
                   <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
                 </svg>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal2">Editar</a></li>
-                  <li><a class="dropdown-item" href="#">Borrar</a></li>
+                  <li>
+                    <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal2">Editar</button>
+                  </li>
+                  <li>
+                    <form action="/<%= post.id %>?_method=DELETE" method="POST">
+                      <button type="submit" class="dropdown-item">Borrar</button>
+                    </form>
+                  </li>
                 </ul>
 
                 <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
@@ -228,26 +233,29 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <form>
+                        <form action="/<%= post.id %>?_method=PUT" method="POST">
                           <div class="mb-3">
-                            <label for="title" class="form-label">Título</label>
-                            <input type="text" class="form-control" id="title" name="title">
-                        </div>
+                            <label for="title1" class="form-label">Título</label>
+                            <input type="text" class="form-control" id="title1" name="title1" value="<%= post.title %>">
+                          </div>
                     
-                        <div class="mb-3">
-                            <label for="description" class="form-label">Descripción</label>
-                            <textarea type="text" class="form-control" id="description" name="description"></textarea>
-                        </div>
+                          <div class="mb-3">
+                            <label for="description1" class="form-label">Descripción</label>
+                            <textarea type="text" class="form-control" id="description1" name="description1"> <%= post.description %></textarea>
+                          </div>
                     
-                        <div class="mb-3">
-                            <label for="markdown" class="form-label">Resumen</label>
-                            <textarea type="text" class="form-control" id="markdown" name="markdown"></textarea>
+                          <div class="mb-3">
+                            <label for="markdown1" class="form-label">Resumen</label>
+                            <textarea type="text" class="form-control" id="markdown1" name="markdown1"> <%= post.markdown %></textarea>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="submit" class="btn rounded-pill twittear-button">Editar</button>
+                          
                         </div>
                         </form>
                       </div>
-                      <div class="modal-footer">
-                        <button type="submit" class="btn rounded-pill twittear-button">Editar</button>
-                      </div>
+                      
+                    
                     </div>
                   </div>
                 </div>
@@ -329,7 +337,7 @@
           <img src="../public/img/fotos de perfil/lateral1.png" class="rounded-circle" alt="Imagen Circular" width="50" height="50">
         </div>
         <div class="profile-user">
-          <p class="bold-text">Mauro Albornoz <img src="./img/twitt/verificado.png" alt="" width="20" height="15"></p>
+          <p class="bold-text">Mauro Albornoz <img src="../public/img/twitt/verificado.png" alt="" width="20" height="15"></p>
           <span>@Mau_Albornoz</span>
         </div>
         <div>
