@@ -354,23 +354,6 @@ main {
     justify-content: space-between;
 }
 
-.verUsuarios-section {
-    padding: 50px;
-    border-bottom: 1px solid var(--gray-border);
-}
-
-.verUsuarios-btn-container {
-    display: flex;
-    justify-content: center;
-}
-
-.verUsuarios-btn {
-    background-color: var(--btn-blue);
-    color: var(--white);
-    padding: 10px 30px;
-    margin-top: 5px;
-}
-
 #radio-container {
     flex-wrap: wrap;
     display: flex;
@@ -378,43 +361,16 @@ main {
     margin-bottom: 15px;
 }
 
-.btn-outline-primary {
-    color: var(--btn-blue);
-    border-color: var(--btn-blue);
-}
-
-.btn-check:active + .btn-outline-primary, .btn-check:checked + .btn-outline-primary, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:active {
-    background-color: var(--btn-blue);
-    border-color: var(--btn-blue);
-}
-
-.btn-check:hover + .btn-outline-primary, .btn-check:checked + .btn-outline-primary, .btn-outline-primary.hove:hover, .btn-outline-primary.dropdown-toggle.show, .btn-outline-primary:hover {
-    background-color: var(--btn-blue);
-    border-color: var(--btn-blue);
-}
-
-.comentarios-container:hover {
-    background-color: rgb(48, 47, 47);
-    border-radius: 50px;
-    cursor: pointer;
-}
-
-.comment-container {
-    display: flex;
-    border: 1px solid var(--gray-border);
-    width: 100%;
-    padding: 20px;
+.pagination-lg .page-item .page-link:hover {
     color: var(--white);
-    font-size: 16px;
-    flex-wrap: wrap;
-    margin-top: 5px;
+    border: none;
+    background-color: var(--btn-hover);
 }
 
-.template-comments-container {
-    display: flex;
-    justify-content: center;
-    margin: 10px 0;
-    border-bottom: 1px solid var(--gray-border);
+.pagination-lg .page-item .page-link {
+    color: var(--white);
+    border: none;
+    background-color: var(--btn-blue);
 }
 
 svg:hover {
@@ -443,4 +399,10 @@ svg:hover {
 .twittear-modal-container {
     display: flex;
     justify-content: end;
+}
+
+.Page-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }

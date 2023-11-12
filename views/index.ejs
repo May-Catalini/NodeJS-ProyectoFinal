@@ -137,9 +137,7 @@
                 
                     <div class="mb-3">
                         <label for="markdown" class="form-label">Resumen</label>
-                        <textarea type="text" class="form-control" id="markdown" name="markdown">
-                          <%= posts.markdown %>
-                        </textarea>
+                        <textarea type="text" class="form-control" id="markdown" name="markdown"> <%= posts.markdown %> </textarea>
                         <div class="twittear-modal-container">
                           <button type="submit" class="btn rounded-pill twittear-button">Twittear</button>
                         </div>
@@ -264,6 +262,15 @@
           </div>
         </div>
       <% }) %>  
+      <div class="Page-navigation">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination pagination-lg">
+            <li class="page-item"><a class="page-link" href="/?size=5&page=<%=prev%>"><<</a></li>
+            <li class="page-item"><a class="page-link" href="/?size=5&page=<%=next%>">>></a></li>
+           
+          </ul>
+        </nav>
+      </div>
   </main>
 
   <aside class="col-lg-3">

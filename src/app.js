@@ -6,7 +6,6 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const port = process.env.PORT || 8080;
 const mongoose = require('mongoose');
-const Post = require('../models/posts');
 
 const postRouter = require('../routes/post_routes');
 
@@ -22,11 +21,6 @@ app.use(methodOverride('_method'));
 app.use('/', postRouter);
 app.use(cors());
 
-
-app.get('/', async (req, res) => {
-    const posts = await Post.find().sort({ createdAt: 'desc' });
-    res.render('index', { posts: posts });
-});
 
 const mongoDBURI = process.env.MONGODB_URI;
 

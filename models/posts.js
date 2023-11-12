@@ -23,10 +23,6 @@ const postSchema = new Schema({
        type: Date,
        default: Date.now
     },
-   slug: {
-        type: String,
-        unique: true
-    },
     sanitizedHtml: {
         type: String,
         required: true

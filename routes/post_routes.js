@@ -3,6 +3,16 @@ const Post = require('../models/posts');
 const { default: mongoose } = require('mongoose');
 const router = express.Router();
 
+router.get('/', async (req, res) => {
+    const count = await Post.countDocuments();
+    const size= parseInt(req.query.size || 5);
+    const page= parseInt(req.query.page || 0);
+    const next = parseInt(page + 1 < count / size ? page + 1 : page);
+    const prev = page > 0 ? page - 1 : 0;
+    const postWithPagination = await Post.find().sort({ createdAt: 'desc' }).limit(size).skip(page * size);
+    res.render('index', { posts: postWithPagination, next, prev });
+});
+
 
 router.post('/', async (req, res) => {
     try {
